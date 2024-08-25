@@ -80,7 +80,6 @@ def the_thinker(operation,list1,list2):
                 if list1[i] ==list2[j]:
                     intersecction.append(list2[j])
         intersecction = list(set(intersecction))
-        result.extend(list2)
         result.extend(list1)
         result = list(set(result))
         for i in range(len(intersecction)):
@@ -98,6 +97,7 @@ def the_thinker(operation,list1,list2):
         print(f"Produto Cartesiano: conjunto 1 {list1Save}, conjunto 2 {list2Save}.Resultado {result}\n")
 
                 
+
 
 for line in read:
     modified.append(line.strip())
