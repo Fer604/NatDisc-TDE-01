@@ -3,22 +3,41 @@ read = file.readlines()
 modified=[]
 operations = []
 
+
+
+
 def the_thinker(operation,list1,list2):
     result =[]
     if operation == "U":
-        pass
-
+        result.extend(list1)
+        result.extend(list2)
+        result = list(set(result))
+        print(f"União: conjunto 1 {list1}, conjunto 2{list2}.Resultado{result}\n")
     if operation == "I":
         for i in range(len(list1)):
             for j in range(len(list2)):
                 if list1[i] ==list2[j]:
                     result.append(list2[j])
         result = list(set(result))
-        print(f"Intersecção: conjunto 1 {list1}, conjunto 2 {list2}.Resultado{result}")
+        print(f"Intersecção: conjunto 1 {list1}, conjunto 2 {list2}.Resultado{result}\n")
     if operation == "D":
-        pass
+        intersecction = []
+        for i in range(len(list1)):
+            for j in range(len(list2)):
+                if list1[i] ==list2[j]:
+                    intersecction.append(list2[j])
+        intersecction = list(set(intersecction))
+        result.extend(list2)
+        result.extend(list1)
+        result = list(set(result))
+        for i in range(len(intersecction)):
+            result.remove(intersecction[i])
+        print(f"Diferença: conjunto 1 {list1}, conjunto 2 {list2}.Resultado{result}\n")
+
     if operation == "C":
-        pass
+        for i in range(len(list1)):
+            for j in range(len(list2)):
+                
 
 
 
@@ -34,7 +53,7 @@ for i in range(len(modified)):
     if (i-1) % 3 == 0:
         operations.append(modified[i][0])
 print(operations)
-for i in range(len(operations)):# em vez de pedir um QUARTO PARAMETRO eu só rodo a função 4 vezes(mais fcil)
+for i in range(len(operations)):#roda a função 4 vezes(mais fcil)
     the_thinker(operations[i],modified[3*i+2],modified[3*i+3])
 
 
