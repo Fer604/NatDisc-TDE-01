@@ -1,3 +1,51 @@
+#Fernando Aschwanden Soviersovski
+
+
+
+#Teste_1.txt:
+#4
+# U
+# 3, 5, 67, 7
+# 1, 2, 3, 4
+# I
+# 1, 2, 3, 4, 5
+# 4, 5
+# D
+# 1, A, C, 34
+# A, C, D, 23
+# C
+# 3, 4, 5, 5, A, B, R
+# 1, B, C, D, 1
+#Teste_2.txt:
+# 3
+# I
+# 1, 5, 6, 72
+# 1, 3, 45
+# C
+# 1, 3, 5
+# 4, 5
+# D
+# 1, S, C, 3
+# S, C, F, 3
+#Teste_2.txt:
+# 5
+# I
+# 1, 5, 6, 72
+# 1, 3, 45
+# C
+# 1, 3, 5
+# 4, 5
+# D
+# 1, S, C, 3
+# S, C, F, 3
+# U
+# 3, 5, 67, 7
+# 1, 2, 3, 4
+# I
+# 1, 2, 3, 4, 5
+# 4, 5
+
+
 import os
 
 arr = os.listdir()
@@ -5,13 +53,10 @@ print(f"\narquivos no diretório:\n{arr}\n")
 selectedFile = str(input("qual arquivo você quer ler (digite com a extensão .txt):\n"))
 
 
-
 file = open(selectedFile,"r")
 read = file.readlines()
 modified=[]
 operations = []
-
-
 
 
 def the_thinker(operation,list1,list2):
@@ -53,10 +98,6 @@ def the_thinker(operation,list1,list2):
         print(f"Produto Cartesiano: conjunto 1 {list1Save}, conjunto 2 {list2Save}.Resultado {result}\n")
 
                 
-
-
-
-
 
 for line in read:
     modified.append(line.strip())
