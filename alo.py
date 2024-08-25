@@ -35,8 +35,15 @@ def the_thinker(operation,list1,list2):
         print(f"Diferença: conjunto 1 {list1}, conjunto 2 {list2}.Resultado{result}\n")
 
     if operation == "C":
+        list1Save = list1
+        list2Save = list2
+        list1 = list(set(list1))
+        list2 = list(set(list2))
         for i in range(len(list1)):
             for j in range(len(list2)):
+                result.append([list1[i],list2[j]])
+        print(f"Produto Cartesiano: conjunto 1 {list1Save}, conjunto 2 {list2Save}.Resultado{result}\n")
+
                 
 
 
@@ -48,11 +55,9 @@ for line in read:
 for i in range(len(modified)):
     modified[i] = modified[i].replace(" ","")
     modified[i] = modified[i].split(",")
-print(modified)
 for i in range(len(modified)):
     if (i-1) % 3 == 0:
         operations.append(modified[i][0])
-print(operations)
 for i in range(len(operations)):#roda a função 4 vezes(mais fcil)
     the_thinker(operations[i],modified[3*i+2],modified[3*i+3])
 
